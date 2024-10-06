@@ -1,0 +1,200 @@
+<!DOCTYPE html>  
+
+
+<html lang="en">  
+<head>  
+    
+    
+<meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Exoplanet Explorer - NASA Theme</title>  
+    <script src="https://cdn.tailwindcss.com"></script>  
+    
+    
+<style>  
+        @keyframes twinkle {  
+            0%, 100% { opacity: 1; }  
+            50% { opacity: 0.5; }  
+        }  
+        .star {  
+            position: absolute;  
+            background-color: white;  
+            border-radius: 50%;  
+            animation: twinkle 3s infinite;  
+        }  
+    </style>  
+</head>  
+<body class="bg-black text-white font-sans">  
+    <div id="stars"></div>  
+    
+    <header class="bg-blue-900 p-4">  
+        <div class="container mx-auto flex items-center justify-between">  
+            <img src="..\images\nasa-logo.png" alt="NASA Logo" class="h-12">   
+           <h1 class="text-3xl font-bold">Exoplanet Surface</h1>   
+		   <a href="../index.html">Geri Dön</button>
+
+		   </div>
+	</header>  
+
+    
+
+    
+<main class="container mx-auto mt-8 p-4">  
+        
+        
+<section class="mb-12 text-center">  
+            <h2 class="text-4xl font-bold mb-4">Watch an animation detailing the surface and structural features of exoplanets.</h2>  
+            <p class="text-xl">
+			
+			
+			Watching an animation detailing the surface and structural features of exoplanets offers a captivating journey into the diverse worlds beyond our solar system. These sophisticated visualizations provide viewers with a unique opportunity to explore the hypothetical landscapes and internal compositions of distant planets.
+			1.Atmospheric Layers: For planets with atmospheres, the animation might depict various atmospheric layers, including cloud formations and weather patterns.
+			
+			
+			</p>  
+			
+			
+			
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="space" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:rgb(0,0,50);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(0,0,20);stop-opacity:1" />
+    </radialGradient>
+    <pattern id="gas-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="8" fill="#FFA500" opacity="0.5"/>
+    </pattern>
+    <pattern id="rocky-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="20" height="20" fill="#8B4513"/>
+      <circle cx="5" cy="5" r="2" fill="#A52A2A"/>
+      <circle cx="15" cy="15" r="3" fill="#D2691E"/>
+    </pattern>
+    <pattern id="ice-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="20" height="20" fill="#E0FFFF"/>
+      <polygon points="10,0 20,10 10,20 0,10" fill="#FFFFFF" opacity="0.7"/>
+    </pattern>
+    <pattern id="lava-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="20" height="20" fill="#FF4500"/>
+      <circle cx="5" cy="5" r="2" fill="#FFFF00" opacity="0.8"/>
+      <circle cx="15" cy="15" r="3" fill="#FFFF00" opacity="0.6"/>
+    </pattern>
+  </defs>
+  
+  <style>
+    @keyframes orbit {
+      from { transform: rotate(0deg) translateX(300px) rotate(0deg); }
+      to   { transform: rotate(360deg) translateX(300px) rotate(-360deg); }
+    }
+    @keyframes pulse {
+      0% { r: 20; }
+      50% { r: 22; }
+      100% { r: 20; }
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+    .planet { animation: orbit linear infinite; }
+    .star { animation: pulse 2s ease-in-out infinite; }
+    .twinkle { animation: twinkle 3s ease-in-out infinite; }
+    text { font-family: Arial, sans-serif; font-size: 12px; fill: white; }
+    .info { font-size: 10px; fill: #cccccc; }
+  </style>
+
+  <!-- Space Background -->
+  <rect width="100%" height="100%" fill="url(#space)"/>
+  
+  <!-- Background Stars -->
+  <g>
+    <circle cx="100" cy="100" r="1" fill="white" class="twinkle"/>
+    <circle cx="200" cy="150" r="1.5" fill="white" class="twinkle" style="animation-delay: 0.5s"/>
+    <circle cx="300" cy="200" r="1" fill="white" class="twinkle" style="animation-delay: 1s"/>
+    <circle cx="700" cy="100" r="1.5" fill="white" class="twinkle" style="animation-delay: 1.5s"/>
+    <circle cx="600" cy="500" r="1" fill="white" class="twinkle" style="animation-delay: 2s"/>
+    <circle cx="750" cy="400" r="1.5" fill="white" class="twinkle" style="animation-delay: 2.5s"/>
+    <circle cx="50" cy="450" r="1" fill="white" class="twinkle" style="animation-delay: 1.2s"/>
+    <circle cx="150" cy="550" r="1.5" fill="white" class="twinkle" style="animation-delay: 0.7s"/>
+  </g>
+  
+  <!-- Main Star -->
+  <circle cx="400" cy="300" r="50" fill="#FFD700" class="star"/>
+  <text x="385" y="305" text-anchor="middle">Star</text>
+  
+  <!-- Hot Jupiter -->
+  <g class="planet" style="animation-duration: 86.4s;">
+    <circle cx="400" cy="300" r="40" fill="url(#gas-pattern)"/>
+    <text x="400" y="300" text-anchor="middle">Hot Jupiter</text>
+    <text x="400" y="315" text-anchor="middle" class="info">Gas atmosphere, metallic hydrogen</text>
+  </g>
+  
+  <!-- Gas Giant -->
+  <g class="planet" style="animation-duration: 4380s;">
+    <circle cx="400" cy="300" r="45" fill="url(#gas-pattern)"/>
+    <text x="400" y="300" text-anchor="middle">Gas Giant</text>
+    <text x="400" y="315" text-anchor="middle" class="info">Dense gas atmosphere, liquid metallic core</text>
+  </g>
+  
+  <!-- Neptune-like -->
+  <g class="planet" style="animation-duration: 2190s;">
+    <circle cx="400" cy="300" r="30" fill="url(#ice-pattern)"/>
+    <text x="400" y="300" text-anchor="middle">Neptune-like</text>
+    <text x="400" y="315" text-anchor="middle" class="info">Ice structure, gas atmosphere</text>
+  </g>
+  
+  <!-- Mini-Neptune -->
+  <g class="planet" style="animation-duration: 1095s;">
+    <circle cx="400" cy="300" r="22" fill="url(#ice-pattern)"/>
+    <text x="400" y="300" text-anchor="middle">Mini-Neptune</text>
+    <text x="400" y="315" text-anchor="middle" class="info">Dense atmosphere, ice-rock mix</text>
+  </g>
+  
+  <!-- Super-Earth -->
+  <g class="planet" style="animation-duration: 547.5s;">
+    <circle cx="400" cy="300" r="18" fill="url(#rocky-pattern)"/>
+    <text x="400" y="300" text-anchor="middle">Super-Earth</text>
+    <text x="400" y="315" text-anchor="middle" class="info">Rocky surface, possible ocean/atmosphere</text>
+  </g>
+  
+  <!-- Terrestrial -->
+  <g class="planet" style="animation-duration: 365s;">
+    <circle cx="400" cy="300" r="12" fill="url(#rocky-pattern)"/>
+    <text x="400" y="300" text-anchor="middle">Terrestrial</text>
+    <text x="400" y="315" text-anchor="middle" class="info">Rocky surface, thin atmosphere</text>
+  </g>
+  
+  <!-- Lava Planet -->
+  <g class="planet" style="animation-duration: 182.5s;">
+    <circle cx="400" cy="300" r="10" fill="url(#lava-pattern)"/>
+    <text x="400" y="300" text-anchor="middle">Lava Planet</text>
+    <text x="400" y="315" text-anchor="middle" class="info">Molten surface, extremely hot</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="24" fill="white">Exoplanet Surface/Structural Features</text>
+</svg>
+
+        </section>    
+</div>  
+    </main>
+    <script>  
+        function createStars() {  
+            const starsContainer = document.getElementById('stars');  
+            const starCount = 100;  
+
+            for (let i = 0; i < starCount; i++) {  
+                const star = document.createElement('div');  
+                star.className = 'star';  
+                star.style.width = `${Math.random() * 3}px`;  
+                star.style.height = star.style.width;  
+                star.style.left = `${Math.random() * 100}%`;  
+                star.style.top = `${Math.random() * 100}%`;  
+                star.style.animationDelay = `${Math.random() * 3}s`;  
+                starsContainer.appendChild(star);  
+            }  
+        }  
+
+        createStars();  
+    </script>  
+</body>  
+</html> 

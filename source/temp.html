@@ -1,0 +1,179 @@
+<!DOCTYPE html>  
+
+
+<html lang="en">  
+<head>  
+    
+    
+<meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Exoplanet Explorer - NASA Theme</title>  
+    <script src="https://cdn.tailwindcss.com"></script>  
+    
+    
+<style>  
+        @keyframes twinkle {  
+            0%, 100% { opacity: 1; }  
+            50% { opacity: 0.5; }  
+        }  
+        .star {  
+            position: absolute;  
+            background-color: white;  
+            border-radius: 50%;  
+            animation: twinkle 3s infinite;  
+        }  
+    </style>  
+</head>  
+<body class="bg-black text-white font-sans">  
+    <div id="stars"></div>  
+    
+    <header class="bg-blue-900 p-4">  
+        <div class="container mx-auto flex items-center justify-between">  
+            <img src="..\images\nasa-logo.png" alt="NASA Logo" class="h-12">   
+           <h1 class="text-3xl font-bold">Exoplanet Surface</h1>   
+		   <a href="../index.html">Geri Dön</button>
+
+		   </div>
+	</header>  
+
+    
+
+    
+<main class="container mx-auto mt-8 p-4">  
+        
+        
+<section class="mb-12 text-center">  
+            <h2 class="text-4xl font-bold mb-4">Explore the temperature ranges of different exoplanets through animation.</h2>  
+            <p class="text-xl">
+			
+			
+			Exploring the temperature ranges of different exoplanets through animation is a fascinating and educational approach to understanding the diverse environments that exist beyond our solar system. 
+			</p>  
+			
+			
+			
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="space" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:rgb(0,0,50);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(0,0,20);stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <style>
+    @keyframes orbit {
+      from { transform: rotate(0deg) translateX(300px) rotate(0deg); }
+      to   { transform: rotate(360deg) translateX(300px) rotate(-360deg); }
+    }
+    @keyframes pulse {
+      0% { r: 20; }
+      50% { r: 22; }
+      100% { r: 20; }
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+    .planet { animation: orbit linear infinite; }
+    .star { animation: pulse 2s ease-in-out infinite; }
+    .twinkle { animation: twinkle 3s ease-in-out infinite; }
+    text { font-family: Arial, sans-serif; font-size: 12px; fill: white; }
+    .info { font-size: 10px; fill: #cccccc; }
+  </style>
+
+  <!-- Space Background -->
+  <rect width="100%" height="100%" fill="url(#space)"/>
+  
+  <!-- Background Stars -->
+  <g>
+    <circle cx="100" cy="100" r="1" fill="white" class="twinkle"/>
+    <circle cx="200" cy="150" r="1.5" fill="white" class="twinkle" style="animation-delay: 0.5s"/>
+    <circle cx="300" cy="200" r="1" fill="white" class="twinkle" style="animation-delay: 1s"/>
+    <circle cx="700" cy="100" r="1.5" fill="white" class="twinkle" style="animation-delay: 1.5s"/>
+    <circle cx="600" cy="500" r="1" fill="white" class="twinkle" style="animation-delay: 2s"/>
+    <circle cx="750" cy="400" r="1.5" fill="white" class="twinkle" style="animation-delay: 2.5s"/>
+    <circle cx="50" cy="450" r="1" fill="white" class="twinkle" style="animation-delay: 1.2s"/>
+    <circle cx="150" cy="550" r="1.5" fill="white" class="twinkle" style="animation-delay: 0.7s"/>
+  </g>
+  
+  <!-- Main Star -->
+  <circle cx="400" cy="300" r="50" fill="#FFD700" class="star"/>
+  <text x="385" y="305" text-anchor="middle">Star</text>
+  
+  <!-- Hot Jupiter -->
+  <g class="planet" style="animation-duration: 86.4s;">
+    <circle cx="400" cy="300" r="40" fill="#FF0000"/>
+    <text x="400" y="300" text-anchor="middle">Hot Jupiter</text>
+    <text x="400" y="315" text-anchor="middle" class="info">1000°C - 1500°C</text>
+  </g>
+  
+  <!-- Gas Giant -->
+  <g class="planet" style="animation-duration: 4380s;">
+    <circle cx="400" cy="300" r="45" fill="#FFA500"/>
+    <text x="400" y="300" text-anchor="middle">Gas Giant</text>
+    <text x="400" y="315" text-anchor="middle" class="info">-140°C - -110°C</text>
+  </g>
+  
+  <!-- Neptune-like -->
+  <g class="planet" style="animation-duration: 2190s;">
+    <circle cx="400" cy="300" r="30" fill="#4169E1"/>
+    <text x="400" y="300" text-anchor="middle">Neptune-like</text>
+    <text x="400" y="315" text-anchor="middle" class="info">-220°C - -200°C</text>
+  </g>
+  
+  <!-- Mini-Neptune -->
+  <g class="planet" style="animation-duration: 1095s;">
+    <circle cx="400" cy="300" r="22" fill="#00FFFF"/>
+    <text x="400" y="300" text-anchor="middle">Mini-Neptune</text>
+    <text x="400" y="315" text-anchor="middle" class="info">-50°C - 50°C</text>
+  </g>
+  
+  <!-- Super-Earth -->
+  <g class="planet" style="animation-duration: 547.5s;">
+    <circle cx="400" cy="300" r="18" fill="#90EE90"/>
+    <text x="400" y="300" text-anchor="middle">Super-Earth</text>
+    <text x="400" y="315" text-anchor="middle" class="info">0°C - 50°C</text>
+  </g>
+  
+  <!-- Terrestrial -->
+  <g class="planet" style="animation-duration: 365s;">
+    <circle cx="400" cy="300" r="12" fill="#8B4513"/>
+    <text x="400" y="300" text-anchor="middle">Terrestrial</text>
+    <text x="400" y="315" text-anchor="middle" class="info">-60°C - 50°C</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="24" fill="white">Exoplanet Temperature Comparison</text>
+</svg>
+
+
+
+
+        </section>    
+</div>  
+    </main>
+    <script>  
+        function createStars() {  
+            const starsContainer = document.getElementById('stars');  
+            const starCount = 100;  
+
+            for (let i = 0; i < starCount; i++) {  
+                const star = document.createElement('div');  
+                star.className = 'star';  
+                star.style.width = `${Math.random() * 3}px`;  
+                star.style.height = star.style.width;  
+                star.style.left = `${Math.random() * 100}%`;  
+                star.style.top = `${Math.random() * 100}%`;  
+                star.style.animationDelay = `${Math.random() * 3}s`;  
+                starsContainer.appendChild(star);  
+            }  
+        }  
+
+        createStars();  
+    </script>  
+</body>  
+</html> 

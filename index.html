@@ -1,0 +1,154 @@
+<!DOCTYPE html>  
+
+
+<html lang="en">  
+<head>  
+    
+    
+<meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Exoplanet Explorer - NASA Theme</title>  
+    <script src="https://cdn.tailwindcss.com"></script>  
+    
+    
+<style>  
+        @keyframes twinkle {  
+            0%, 100% { opacity: 1; }  
+            50% { opacity: 0.5; }  
+        }  
+        .star {  
+            position: absolute;  
+            background-color: white;  
+            border-radius: 50%;  
+            animation: twinkle 3s infinite;  
+        }  
+    </style>  
+</head>  
+<body class="bg-black text-white font-sans">  
+    <div id="stars"></div>  
+    
+    <header class="bg-blue-900 p-4">  
+        <div class="container mx-auto flex items-center justify-between">    
+             <img src="images\nasa-logo.png" alt="NASA Logo" class="h-12">   
+            
+<h1 class="text-3xl font-bold">Celestial Pathway Explorer</h1>  
+        </div>  
+    
+    
+</header>  
+
+    
+
+    
+<main class="container mx-auto mt-8 p-4">  
+        
+        
+		<section class="mb-12 text-center">  
+            <h2 class="text-4xl font-bold mb-4">Discover the Wonders of Exoplanets</h2>  
+            <p class="text-xl">Explore eight key features of worlds beyond our solar system</p>  
+        </section>  
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">  
+				
+				<div class="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition duration-300">  
+					<h3 class="text-2xl font-bold mb-4">Exoplanets Animation</h3>  
+					<a href="source/exoplanet_animation1.html" target="_blank"> 
+						<img src="images/exo.png"/>
+					</a>
+					<p>the animation representation of other planets.</p>  
+			   </div>  
+			   
+				<div class="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition duration-300">  
+					<h3 class="text-2xl font-bold mb-4">Exoplanets size Animation</h3>  
+					<a href="source/exoplanet_sun.html" target="_blank"> 
+						<img src="images/animation.png"/>
+					</a>					
+					<p>the representation of the sizes of the outer planets as an animation.</p>  
+				</div> 
+							
+            
+            
+			<div class="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition duration-300">  
+                <h3 class="text-2xl font-bold mb-4">Exoplanets Orbital Periods Animation</h3>  
+               		<a href="source/orbital.html" target="_blank"> 
+						<img src="images/orbital.png"/>
+					</a>
+                <p>Visualize the varying orbital periods of exoplanets around their host stars.</p>  
+            </div>  
+            
+            
+			<div class="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition duration-300">  
+                <h3 class="text-2xl font-bold mb-4">Exoplanets Size Comparison Animation</h3>  
+                	<a href="source/size.html" target="_blank"> 
+						<img src="images/size.png"/>
+					</a>
+                <p>Compare the sizes of various exoplanets in an animated format.</p>  
+            </div>  
+            
+            
+			<div class="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition duration-300">  
+                <h3 class="text-2xl font-bold mb-4">Exoplanets Temperature Comparison Animation</h3>  
+               					<a href="source/temp.html" target="_blank"> 
+						<img src="images/temperature.png"/>
+					</a>
+                <p>Explore the temperature ranges of different exoplanets through animation.</p>  
+			</div>  
+            
+            
+			<div class="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition duration-300">  
+                <h3 class="text-2xl font-bold mb-4">Exoplanets Brightness Comparison Animation (Based on NASA Data)</h3>  
+                					<a href="source/bright.html" target="_blank"> 
+						<img src="images/bright.png"/>
+					</a> 
+                <p>Compare the brightness of various exoplanets based on NASA's data in an animated format.</p>  
+            </div>  
+
+            <div class="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition duration-300">  
+                <h3 class="text-2xl font-bold mb-4">Exoplanets Surface/Structural Features Animation</h3>  
+               					<a href="source/exoplanet_animation.html" target="_blank"> 
+						<img src="images/structural.png"/>
+					</a>
+                <p>Watch an animation detailing the surface and structural features of exoplanets.</p>  
+            </div>  
+            
+            
+			<div class="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition duration-300">  
+                <h3 class="text-2xl font-bold mb-4">Distribution of Discovered Exoplanets Animation</h3>  
+               					<a href="source/distri.html" target="_blank"> 
+						<img src="images/distri.png"/>
+					</a>
+				<p>See an animated visualization of how discovered exoplanets are distributed across the galaxy.</p>  
+            </div>   
+</div>  
+    </main>  
+
+    <footer class="bg-blue-900 mt-12 py-6">  
+        
+        
+<div class="container mx-auto text-center">  
+            
+            
+<p>&copy; 2024 NASA space apps challenge - powered by leaderXspace team  .</p>  
+        </div>  
+    </footer>  
+
+    <script>  
+        function createStars() {  
+            const starsContainer = document.getElementById('stars');  
+            const starCount = 100;  
+
+            for (let i = 0; i < starCount; i++) {  
+                const star = document.createElement('div');  
+                star.className = 'star';  
+                star.style.width = `${Math.random() * 3}px`;  
+                star.style.height = star.style.width;  
+                star.style.left = `${Math.random() * 100}%`;  
+                star.style.top = `${Math.random() * 100}%`;  
+                star.style.animationDelay = `${Math.random() * 3}s`;  
+                starsContainer.appendChild(star);  
+            }  
+        }  
+
+        createStars();  
+    </script>  
+</body>  
+</html> 
